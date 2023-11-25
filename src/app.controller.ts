@@ -1,12 +1,13 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Post, Render } from '@nestjs/common';
 import { AppService } from './app.service';
 
-@Controller()
+@Controller('pages')
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  @Get('upload')
+  @Render('upload')
+  async pageUpload() {
+    return await this.appService.renderUpload();
   }
 }

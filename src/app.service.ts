@@ -2,7 +2,24 @@ import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class AppService {
-  getHello(): string {
-    return 'Hello World!';
+  constructor() {}
+  async pageHeader() {
+    const result = {};
+
+    return result;
+  }
+
+  async pageContent(page: string) {
+    const result = {};
+
+    return result;
+  }
+
+  async renderUpload() {
+    const result = {
+      title: '',
+    };
+
+    return result;
   }
 }
